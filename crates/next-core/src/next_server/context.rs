@@ -1061,7 +1061,7 @@ pub async fn get_server_chunking_context_with_client_assets(
         builder = builder.source_map_source_type(SourceMapSourceType::AbsoluteFileUri);
     } else {
         builder = builder
-            .source_map_source_type(SourceMapSourceType::RelativeFileUri)
+            .source_map_source_type(SourceMapSourceType::RelativeUri)
             .chunking_config(
                 Vc::<EcmascriptChunkType>::default().to_resolved().await?,
                 ChunkingConfig {
@@ -1143,7 +1143,7 @@ pub async fn get_server_chunking_context(
         builder = builder.source_map_source_type(SourceMapSourceType::AbsoluteFileUri);
     } else {
         builder = builder
-            .source_map_source_type(SourceMapSourceType::RelativeFileUri)
+            .source_map_source_type(SourceMapSourceType::RelativeUri)
             .chunking_config(
                 Vc::<EcmascriptChunkType>::default().to_resolved().await?,
                 ChunkingConfig {
